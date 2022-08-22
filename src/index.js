@@ -14,7 +14,10 @@ inputCountryName.addEventListener(
 );
 
 function inputChange(event) {
-  const name = event.target.value;
+  let name = event.target.value;
+  if (name.length === 0) {
+    return;
+  }
   clearDatas();
   fetchCountries(name.trim())
     .then(countries => renderCountriesList(countries))
@@ -60,7 +63,6 @@ function countriesBox(countries) {
   const markup = countries
     .map(country => {
       const languages = currentLanguages(country.languages);
-      console.log(country.languages);
       return `<div class="country-item">
         <img src="${country.flags.svg}" alt="${country.name.official}" width="200">
           <p><b>Name</b>: ${country.name.official}</p>
