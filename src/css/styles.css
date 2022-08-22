@@ -10,11 +10,35 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
+  padding: 100px;
 }
-
+img {
+  display: block;
+  height: 100%;
+}
 #search-box {
   font: inherit;
   padding: 8px;
   max-width: 320px;
   margin-bottom: 16px;
+}
+.country-info {
+  display: flex;
+}
+.country-item {
+  flex-basis: 50%;
+}
+.country-list-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid blueviolet;
+}
+.country-list-item img {
+  margin-right: 20px;
+}
+.country-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 300px;
 }
