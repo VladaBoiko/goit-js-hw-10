@@ -15,10 +15,11 @@ inputCountryName.addEventListener(
 
 function inputChange(event) {
   let name = event.target.value;
+  clearDatas();
   if (name.length === 0) {
     return;
   }
-  clearDatas();
+
   fetchCountries(name.trim())
     .then(countries => renderCountriesList(countries))
     .catch(error => Notify.failure('Oops, there is no country with that name'));
